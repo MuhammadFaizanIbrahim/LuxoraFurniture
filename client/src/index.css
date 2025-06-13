@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  @keyframes slideUpColorChange {
+    0% {
+      transform: translateY(0);
+      background-color: white;
+      color: black;
+    }
+    50% {
+      transform: translateY(-100%);
+      background-color: white;
+      color: black;
+    }
+    51% {
+      transform: translateY(100%);
+      background-color: #292929;
+      color: white;
+    }
+    100% {
+      transform: translateY(0);
+      background-color: #292929;
+      color: white;
+    }
+  }
+  
+  @keyframes slideDownColorReverse {
+    0% {
+      transform: translateY(0);
+      background-color: #292929;
+      color: white;
+    }
+    50% {
+      transform: translateY(-100%);
+      background-color: #292929;
+      color: white;
+    }
+    51% {
+      transform: translateY(100%);
+      background-color: white;
+      color: black;
+    }
+    100% {
+      transform: translateY(0);
+      background-color: white;
+      color: black;
+    }
+  }
+  
+  
