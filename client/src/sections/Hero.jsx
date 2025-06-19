@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import heroVideo from "/video/furniture.mp4";
 
 const Hero = () => {
+  const [hovered, setHovered] = useState(false);
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <video
@@ -15,12 +16,36 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-black/50 z-10" />
 
-      <div className="relative z-20 flex items-center justify-center h-full text-center text-white px-4">
+      <div className="relative z-20 flex items-center justify-start h-full text-left text-white px-4 ml-55 mt-70 md:px-16 font-[Times_New_Roman]">
         <div>
-        <h1 className="text-6xl md:text-7xl font-bold mb-4 text-white">
-            Luxora Furniture
+          <h1 className="text-5xl md:text-6xl mb-15 text-white">
+            We know what furniture brands need
           </h1>
-          <p className="text-lg md:text-2xl">Crafted Elegance in Every Grain</p>
+          <button
+            className={`w-44 h-11 px-4 py-2 font-semibold rounded-sm border border-white relative overflow-hidden 
+    transition-colors duration-300 ease-in-out 
+    ${hovered ? "bg-transparent text-white" : "bg-transparent text-white"}`}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+          >
+            <span
+              className={`absolute inset-0 flex items-center justify-center font-normal transition-transform duration-300
+      ${
+        hovered
+          ? "animate-[textSlideUp_0.8s_ease-in-out]"
+          : "animate-[textSlideDown_0.8s_ease-in-out]"
+      }`}
+            >
+              Contact Us
+              <span
+                className={`ml-2 transition-transform duration-200 ${
+                  hovered ? "translate-x-1" : "translate-x-0"
+                }`}
+              >
+                →
+              </span>
+            </span>
+          </button>
         </div>
       </div>
     </div>

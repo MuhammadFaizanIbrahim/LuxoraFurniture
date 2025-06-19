@@ -6,50 +6,120 @@ html, body {
     box-sizing: border-box;
   }
   
-  @keyframes slideUpColorChange {
+  @keyframes textSlideUp {
     0% {
       transform: translateY(0);
-      background-color: white;
-      color: black;
     }
     50% {
       transform: translateY(-100%);
-      background-color: white;
-      color: black;
     }
     51% {
       transform: translateY(100%);
-      background-color: #292929;
-      color: white;
     }
     100% {
       transform: translateY(0);
-      background-color: #292929;
-      color: white;
     }
   }
   
-  @keyframes slideDownColorReverse {
+  @keyframes textSlideDown {
     0% {
       transform: translateY(0);
-      background-color: #292929;
-      color: white;
     }
     50% {
-      transform: translateY(-100%);
-      background-color: #292929;
-      color: white;
+      transform: translateY(100%);
     }
     51% {
-      transform: translateY(100%);
-      background-color: white;
-      color: black;
+      transform: translateY(-100%);
     }
     100% {
       transform: translateY(0);
-      background-color: white;
-      color: black;
     }
   }
   
   
+  
+  
+
+  @keyframes slideUpOnly {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-100%);
+    }
+    51% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideDownOnly {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(100%);
+    }
+    51% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+@keyframes slideUpOnly {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownOnly {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
+}
+
+@keyframes spin-y {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.animate-spin-y {
+  animation: spin-y 2s linear infinite;
+  transform-style: preserve-3d;
+  /* backface-visibility: hidden; */
+}
+
+.overlay {
+  transition: opacity 0.8s ease-in-out;
+}
