@@ -17,8 +17,7 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-black/50 z-10" />
 
-      <div className="relative z-20 flex justify-center mt-[100%]
-       md:justify-start md:ml-55 md:mt-70
+      <div className="relative z-20 flex mt-[100%] md:items-center justify-center md:justify-start md:ml-55 md:mt-70
        h-full px-4 md:px-16 text-white font-[Times_New_Roman]">
         <div className="max-w-4xl text-center md:text-left">
           <h1 className="text-5xl md:6xl mb-8">
