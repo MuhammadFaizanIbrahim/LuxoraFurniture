@@ -20,7 +20,6 @@ const LenisProvider = () => {
     };
     requestAnimationFrame(raf);
 
-    // Sync with GSAP ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update);
 
     ScrollTrigger.scrollerProxy(document.body, {
@@ -43,7 +42,7 @@ const LenisProvider = () => {
 
     return () => {
       lenis.destroy();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // ✅ Fix here
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 
