@@ -9,7 +9,8 @@ const ChairShowcase = () => {
   const lightRef = useRef({ value: 0 });
 
   return (
-    <div className="relative w-full h-[300vh]">
+    <div className="relative w-full h-[200vh] sm:h-[250vh] md:h-[280vh] lg:h-[300vh]
+    ">
       <ChairAnimator
         opacityRef={opacityRef}
         rotationRef={rotationRef}

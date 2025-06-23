@@ -17,22 +17,34 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-black/50 z-10" />
 
-      <div className="relative z-20 flex mt-[100%] md:items-center justify-center md:justify-start md:ml-55 md:mt-70
-       h-full px-4 md:px-16 text-white font-[Times_New_Roman]">
-        <div className="max-w-4xl text-center md:text-left">
-          <h1 className="text-5xl md:6xl mb-8">
+      <div className="relative z-20 flex 
+        mt-[100%] 
+        md:mt-[35%] 
+        lg:mt-65
+        md:items-center 
+        justify-center 
+        md:justify-start 
+        md:ml-0 
+        lg:ml-55
+        h-full px-4 md:px-12 lg:px-16 
+        text-white font-[Times_New_Roman]"
+      >
+        <div className="max-w-4xl text-left">
+          <h2 className="text-white text-5xl md:text-3xl lg:text-6xl mb-8">
             We know what furniture brands need
-          </h1>
+          </h2>
 
           <button
-            className={`w-36 sm:w-40 md:w-44 h-10 sm:h-11 px-4 py-2 font-semibold rounded-sm border border-white relative overflow-hidden 
+            className={`w-36 sm:w-40 md:w-32 lg:w-44 h-10 sm:h-11 px-4 py-2 font-semibold
+             rounded-sm border border-white relative overflow-hidden 
               transition-colors duration-300 ease-in-out 
               ${hovered ? "bg-transparent text-white" : "bg-transparent text-white"}`}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
             <span
-              className={`absolute inset-0 flex items-center justify-center font-normal transition-transform duration-300
+              className={`absolute inset-0 md:text-sm lg:text-lg flex items-center justify-center
+               font-normal transition-transform duration-300
                 ${
                   hovered
                     ? "animate-[textSlideUp_0.8s_ease-in-out]"

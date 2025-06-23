@@ -28,18 +28,24 @@ const SofaConfigurator = () => {
   const parts = ["pillow", "seat", "base"];
 
   return (
-    <div id="sofa-section" className="w-full h-[100vh] relative">
+    <div id="sofa-section" className="w-full h-screen relative">
       <div
         id="configurator-ui"
-        className="absolute top-180 left-170 p-4 rounded-md shadow-lg z-10 h-40 w-140 opacity-0 scale-75"
-        style={{ backgroundColor: "rgba(255, 255, 255, 0.65)" }}
+        className="
+          absolute z-10 p-4 rounded-md shadow-lg 
+          h-40 w-[350px] sm:w-[380px] md:w-[460px] 
+          top-[75%] sm:top-[50%] md:top-160 lg:top-180 
+          left-[50%] transform -translate-x-1/2 
+          opacity-100 scale-100
+          bg-white/70 backdrop-blur-md
+        "
       >
         <div className="flex justify-between mb-4 border-b">
           {parts.map((part) => (
             <button
               key={part}
               onClick={() => setActivePart(part)}
-              className={`flex-1 py-2 text-md font-normal capitalize transition-colors duration-200 ${
+              className={`flex-1 py-2 text-sm md:text-md font-normal capitalize transition-colors duration-200 ${
                 activePart === part
                   ? "border-b-2 border-black text-black"
                   : "text-gray-500"
@@ -55,7 +61,7 @@ const SofaConfigurator = () => {
             <button
               key={color.hex}
               onClick={() => handleColorChange(activePart, color.hex)}
-              className={`w-full h-12 mt-2 rounded-sm border-2 transition-all duration-200 ${
+              className={`w-full h-10 sm:h-12 rounded-sm border-2 transition-all duration-200 ${
                 colors[activePart] === color.hex
                   ? "border-black scale-105"
                   : "border-gray-300"
@@ -67,10 +73,16 @@ const SofaConfigurator = () => {
         </div>
       </div>
 
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-20">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-20">
         <div
           id="configurator-text"
-          className="absolute top-10 left-1/2 transform -translate-x-1/2 text-[10rem] font-bold text-[#111112]"
+          className="
+            absolute left-1/2 transform -translate-x-1/2 
+            text-7xl sm:text-6xl md:text-8xl lg:text-[10rem] 
+            top-28 sm:top-12 md:top-30 lg:top-10 
+            font-bold text-[#111112]
+            text-center
+          "
           style={{
             lineHeight: 2,
             fontFamily: '"Times New Roman", Times, serif',
@@ -110,7 +122,6 @@ const SofaConfigurator = () => {
           <OrbitControls
             enableZoom={false}
             enablePan={false}
-            // minPolarAngle={Math.PI / 3}
             maxPolarAngle={Math.PI / 3.5}
           />
         </Canvas>

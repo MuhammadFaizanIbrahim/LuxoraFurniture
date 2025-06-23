@@ -65,7 +65,7 @@ const Navbar = () => {
         <div className="w-5 h-5 bg-white"></div>
 
         <button
-          className={`w-36 sm:w-44 md:w-46 h-12 sm:h-11 md:h-12 px-3 sm:px-4 py-2 font-semibold rounded-3xl relative overflow-hidden 
+          className={`w-36 sm:w-44 md:w-46 lg:w-46 h-12 sm:h-11 md:h-12 px-3 sm:px-4 py-2 font-semibold rounded-3xl relative overflow-hidden 
             transition-colors duration-500 ease-in-out 
             ${hovered ? "bg-[#333333] text-white" : "bg-white text-black"}`}
           onMouseEnter={() => setHovered(true)}

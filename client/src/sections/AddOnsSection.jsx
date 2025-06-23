@@ -28,9 +28,9 @@ const AddOnsSection = () => {
   };
 
   return (
-    <section className="bg-black h-[100vh] text-white py-12">
+    <section className="bg-black text-white py-10 sm:py-12 h-[80vh] sm:h-[100vh]">
       <h2
-        className="text-5xl font-normal mt-30 mb-30 text-center"
+        className="text-5xl font-normal mt-12 mb-12 sm:mt-20 sm:mb-20 text-center"
         style={{ fontFamily: '"Times New Roman", Times, serif' }}
       >
         Add-ons
@@ -42,10 +42,10 @@ const AddOnsSection = () => {
         onMouseLeave={handleMouseLeave}
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
-        className="cursor-grab overflow-x-scroll flex scroll-smooth snap-x snap-mandatory ml-70"
+        className="cursor-grab overflow-x-scroll flex scroll-smooth snap-x snap-mandatory ml-4 md:l-4 lg:ml-70 "
         style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}
       >
-        <div className="min-w-[30%] h-[300px] mt-[200px] snap-start shrink-0 rounded-sm overflow-hidden bg-white/10">
+        <div className="min-w-[70%] sm:min-w-[40%] md:min-w-[30%] h-[270px] sm:h-[300px] mt-[132px] sm:mt-[150px] md:mt-[200px] snap-start shrink-0 rounded-sm overflow-hidden bg-white/10">
           <img
             src="/images/chairs.webp"
             alt="Image 1"
@@ -53,7 +53,7 @@ const AddOnsSection = () => {
           />
         </div>
 
-        <div className="min-w-[20%] h-[500px] ml-4 snap-start shrink-0 rounded-sm overflow-hidden bg-white/10">
+        <div className="min-w-[60%] sm:min-w-[30%] md:min-w-[20%] h-[400px] sm:h-[400px] md:h-[500px] ml-4 snap-start shrink-0 rounded-sm overflow-hidden bg-white/10">
           <video
             src="/video/vfx.mp4"
             autoPlay
@@ -63,7 +63,7 @@ const AddOnsSection = () => {
           />
         </div>
 
-        <div className="min-w-[30%] h-[300px] mt-[200px] ml-4 snap-start shrink-0 rounded-sm overflow-hidden bg-white/10">
+        <div className="min-w-[70%] sm:min-w-[40%] md:min-w-[30%] h-[270px] sm:h-[300px] mt-[132px] sm:mt-[150px] md:mt-[200px] ml-4 snap-start shrink-0 rounded-sm overflow-hidden bg-white/10">
           <img
             src="/images/branding.webp"
             alt="Image 2"
@@ -71,7 +71,7 @@ const AddOnsSection = () => {
           />
         </div>
 
-        <div className="min-w-[20%] h-[500px] ml-4 snap-start shrink-0 rounded-sm overflow-hidden bg-white/10">
+        <div className="min-w-[60%] sm:min-w-[30%] md:min-w-[20%] h-[400px] sm:h-[400px] md:h-[500px] ml-4 snap-start shrink-0 rounded-sm overflow-hidden bg-white/10">
           <video
             src="/video/services_chair.mp4"
             autoPlay
@@ -81,7 +81,7 @@ const AddOnsSection = () => {
           />
         </div>
 
-        <div className="min-w-[30%] h-[300px] mt-[200px] ml-4 mr-10 snap-start shrink-0 rounded-sm overflow-hidden bg-white/10">
+        <div className="min-w-[70%] sm:min-w-[40%] md:min-w-[30%] h-[270px] sm:h-[300px] mt-[132px] sm:mt-[150px] md:mt-[200px] ml-4 mr-6 snap-start shrink-0 rounded-sm overflow-hidden bg-white/10">
           <video
             src="/video/shootings.mp4"
             autoPlay

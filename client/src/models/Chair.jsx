@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
-const Chair = ({ opacityRef, rotationRef, scaleRef, lightRef }) => {
+const Chair = ({ opacityRef, rotationRef, scaleRef, lightRef, isMobile, isTablet }) => {
   const { scene } = useGLTF("/models/chair.glb");
   const group = useRef();
   const light = useRef();
@@ -17,7 +17,10 @@ const Chair = ({ opacityRef, rotationRef, scaleRef, lightRef }) => {
   }, [scene]);
 
   useFrame(() => {
-    const scale = scaleRef.current?.value || 1;
+    const scale =
+      scaleRef.current?.value ||
+      (isMobile ? 1 : isTablet ? 1.5 : 2); 
+
     group.current.scale.set(scale, scale, scale);
 
     if (group.current && rotationRef?.current) {
@@ -37,7 +40,17 @@ const Chair = ({ opacityRef, rotationRef, scaleRef, lightRef }) => {
   });
 
   return (
-    <group ref={group} scale={2} position={[0, -1.2, 2.4]}>
+    <group
+      ref={group}
+      scale={isMobile ? 1 : isTablet ? 1.5 : 2} 
+      position={
+        isMobile
+          ? [0, -1, 2]
+          : isTablet
+          ? [0, -1.1, 2.2]
+          : [0, -1.2, 2.4]
+      }
+    >
       <primitive object={scene} />
       <pointLight
         ref={light}

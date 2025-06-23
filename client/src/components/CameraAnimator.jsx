@@ -9,41 +9,80 @@ const CameraAnimator = () => {
   const { camera } = useThree();
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        camera.position,
-        { x: 0, y: 10, z: 0 },
-        {
-          x: 0,
-          y: 1.5,
-          z: 5,
-          ease: "power2.inOut",
-          scrollTrigger: {
-            trigger: "#sofa-section",
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-            pin: true,
-          },
-          onUpdate: () => camera.lookAt(0, 0.8, 0),
-        }
-      );
+    const isMobile = window.innerWidth < 768;
 
-      gsap.fromTo(
-        "#configurator-text",
-        { scale: 3.5, y: 20 },
-        {
-          scale: 0.3,
-          y: -100,
-          ease: "power2.inOut",
-          scrollTrigger: {
-            trigger: "#sofa-section",
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        }
-      );
+    const ctx = gsap.context(() => {
+      if (isMobile) {
+        gsap.fromTo(
+          camera.position,
+          { x: 0, y: 5, z: 0 },
+          {
+            x: 0,
+            y: 1.2,
+            z: 4,
+            ease: "power2.inOut",
+            scrollTrigger: {
+              trigger: "#sofa-section",
+              start: "top top",
+              end: "bottom top",
+              scrub: true,
+              pin: true,
+            },
+            onUpdate: () => camera.lookAt(0, 0.8, 0),
+          }
+        );
+
+        gsap.fromTo(
+          "#configurator-text",
+          { scale: 2.2, y: 30 },
+          {
+            scale: 0.4,
+            y: -80,
+            ease: "power2.inOut",
+            scrollTrigger: {
+              trigger: "#sofa-section",
+              start: "top top",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+      } else {
+        gsap.fromTo(
+          camera.position,
+          { x: 0, y: 10, z: 0 },
+          {
+            x: 0,
+            y: 1.5,
+            z: 5,
+            ease: "power2.inOut",
+            scrollTrigger: {
+              trigger: "#sofa-section",
+              start: "top top",
+              end: "bottom top",
+              scrub: true,
+              pin: true,
+            },
+            onUpdate: () => camera.lookAt(0, 0.8, 0),
+          }
+        );
+
+        gsap.fromTo(
+          "#configurator-text",
+          { scale: 3.5, y: 20 },
+          {
+            scale: 0.3,
+            y: -100,
+            ease: "power2.inOut",
+            scrollTrigger: {
+              trigger: "#sofa-section",
+              start: "top top",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+      }
 
       gsap.to("#configurator-ui", {
         opacity: 1,
