@@ -1,4 +1,3 @@
-// src/hooks/useModelLoading.js
 import { useProgress } from '@react-three/drei';
 
 export const useModelLoading = () => {

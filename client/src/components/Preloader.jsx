@@ -10,10 +10,10 @@ const Preloader = ({ isLoading }) => {
       setTimeout(() => setMoveLeft(true), 500);
       setTimeout(() => setShouldShow(false), 2500);
     } else {
-      document.body.style.overflow = "hidden"; // lock scroll during preload
+      document.body.style.overflow = "hidden";
     }
     return () => {
-      document.body.style.overflow = "auto"; // unlock on unmount
+      document.body.style.overflow = "auto";
     };
   }, [isLoading]);
 

@@ -8,7 +8,7 @@ import './index.css';
 import { useModelLoading } from './hooks/useModelLoading';
 
 const App = () => {
-  const { isLoading } = useModelLoading(); // 👈 hook here
+  const { isLoading } = useModelLoading();
 
   return (
     <>
