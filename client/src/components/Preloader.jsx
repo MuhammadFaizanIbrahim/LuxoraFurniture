@@ -1,31 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Preloader = () => {
-  const [isVisible, setIsVisible] = useState(true);
+const Preloader = ({ isLoading }) => {
   const [moveLeft, setMoveLeft] = useState(false);
+  const [shouldShow, setShouldShow] = useState(true);
 
   useEffect(() => {
-    const delayMove = setTimeout(() => setMoveLeft(true), 500); 
-    const delayFade = setTimeout(() => setIsVisible(false), 3000);
-
+    if (!isLoading) {
+      setTimeout(() => setMoveLeft(true), 500);
+      setTimeout(() => setShouldShow(false), 2500);
+    } else {
+      document.body.style.overflow = "hidden"; // lock scroll during preload
+    }
     return () => {
-      clearTimeout(delayMove);
-      clearTimeout(delayFade);
+      document.body.style.overflow = "auto"; // unlock on unmount
     };
-  }, []);
+  }, [isLoading]);
 
   return (
     <AnimatePresence>
-      {isVisible && (
+      {shouldShow && (
         <motion.div
           className="fixed inset-0 bg-black z-[999] flex items-center justify-center"
           initial={{ y: 0 }}
           animate={{ y: 0 }}
-          exit={{
-            y: "-100%",
-            transition: { duration: 1, ease: "easeInOut" },
-          }}
+          exit={{ y: "-100%", transition: { duration: 1, ease: "easeInOut" } }}
         >
           <div className="relative flex items-center justify-center">
             <motion.div
@@ -71,12 +70,7 @@ const Preloader = () => {
               />
             </motion.div>
 
-            <h1
-              className="text-white text-xl font-normal z-0"
-              initial={{ scale: 1 }}
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ repeat: Infinity, duration: 1 }}
-            >
+            <h1 className="text-white text-xl font-normal z-0">
               Luxora Furniture
             </h1>
           </div>
