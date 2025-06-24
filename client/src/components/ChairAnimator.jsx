@@ -110,7 +110,7 @@ const ChairAnimator = ({ opacityRef, rotationRef, scaleRef, lightRef }) => {
       </div>
 
       <div className="box-animator absolute top-[18%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-        w-[90%] sm:w-[75%] md:w-[85%] lg:w-[60%] h-[580px] sm:h-[550px] md:h-[640px] lg:h-[770px]
+        w-[90%] sm:w-[75%] md:w-[85%] lg:w-[60%] h-[579px] sm:h-[550px] md:h-[640px] lg:h-[770px]
         z-[65] opacity-0 pointer-events-none">
         <div className="rounded-box relative w-full h-full border border-black rounded-3xl scale-0 origin-top transition-transform duration-700">
           <div className="absolute top-5 left-0 w-full px-4 flex justify-between items-center flex-wrap sm:flex-nowrap gap-y-2 sm:gap-y-0">
